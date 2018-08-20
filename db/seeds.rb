@@ -20,6 +20,7 @@ clinics = [
 {name: "Clinic 7", address: "10a Roti Avenue", phone_number: "020 3678 2190"}
 ]
 
+
 clinics.each {|clinic_data| Clinic.create(clinic_data)}
 
 #department
@@ -35,6 +36,7 @@ departments = [
 ]
 
 departments.each {|department_data| Department.create(department_data)}
+
 #practitioners
 
 Practitioner.create(name: "Dona Paulsen", gender: "female", years_experience: 15, phone_number_ext: 30, email: "dona.p@clinic.com", department: Department.all.sample)

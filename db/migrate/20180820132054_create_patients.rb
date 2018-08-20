@@ -6,6 +6,7 @@ class CreatePatients < ActiveRecord::Migration[5.2]
       t.string :address
       t.string :medical_history
       t.belongs_to :clinic, index: true
+
       t.timestamps
     end
   end
