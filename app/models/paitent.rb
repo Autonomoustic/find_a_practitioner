@@ -1,2 +1,0 @@
-class Paitent < ApplicationRecord
-end
