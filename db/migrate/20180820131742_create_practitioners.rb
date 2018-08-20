@@ -8,6 +8,8 @@ class CreatePractitioners < ActiveRecord::Migration[5.2]
       t.integer :phone_number_ext
       t.string :email
 
+      t.belongs_to :department, index: true
+
       t.timestamps
     end
   end
