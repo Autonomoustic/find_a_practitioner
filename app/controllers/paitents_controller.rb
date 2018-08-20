@@ -1,0 +1,2 @@
+class PaitentsController < ApplicationController
+end
