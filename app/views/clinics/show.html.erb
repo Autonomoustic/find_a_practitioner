@@ -1,0 +1,9 @@
+<h1><%=@clinic.name%></h1>
+
+<h3><%=@clinic.address%></h3>
+<h3><%=@clinic.phone_number%></h3>
+
+
+<% @clinic.department.each do |department|%>
+  <p><%=link_to department.name, department_path(department)%></p>
+<% end %>

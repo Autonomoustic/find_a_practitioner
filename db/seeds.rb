@@ -10,13 +10,13 @@
 
 
 #clinic
-Clinic.create(name: "Clinic 1", address: "1 Pavilion Avenue", phone_number: 020 3132 2190)
-Clinic.create(name: "Clinic 2", address: "14 Castle Road", phone_number: 020 3132 2000)
-Clinic.create(name: "Clinic 3", address: "32 Circle Drive", phone_number: 020 2432 9190)
-Clinic.create(name: "Clinic 4", address: "63 Dower Avenue", phone_number: 020 3130 2090)
-Clinic.create(name: "Clinic 5", address: "45 Swing Avenue", phone_number: 020 2032 2190)
-Clinic.create(name: "Clinic 6", address: "32 Pavilion Avenue", phone_number: 020 3132 2191)
-Clinic.create(name: "Clinic 7", address: "10a Roti Avenue", phone_number: 020 3678 2190)
+Clinic.create(name: "Clinic 1", address: "1 Pavilion Avenue", phone_number: "020 3132 2190")
+Clinic.create(name: "Clinic 2", address: "14 Castle Road", phone_number: "020 3132 2000")
+Clinic.create(name: "Clinic 3", address: "32 Circle Drive", phone_number: "020 2432 9190")
+Clinic.create(name: "Clinic 4", address: "63 Dower Avenue", phone_number: "020 3130 2090")
+Clinic.create(name: "Clinic 5", address: "45 Swing Avenue", phone_number: "020 2032 2190")
+Clinic.create(name: "Clinic 6", address: "32 Pavilion Avenue", phone_number: "020 3132 2191")
+Clinic.create(name: "Clinic 7", address: "10a Roti Avenue", phone_number: "020 3678 2190")
 
 
 #department
@@ -32,6 +32,8 @@ Department.create(name: "Infectious Diseases")
 Department.create(name: "Laboratory work")
 Department.create(name: "Neurology")
 Department.create(name: "Occupational Therapy")
+
+
 #practitioners
 
 Practitioner.create(name: "Dona Paulsen", gender: "female", years_experience: 15, phone_number_ext: 30, email: "dona.p@clinic.com")
