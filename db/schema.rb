@@ -51,6 +51,10 @@ ActiveRecord::Schema.define(version: 2018_08_20_132054) do
   create_table "practitioners", force: :cascade do |t|
     t.string "name"
     t.string "gender"
+<<<<<<< HEAD
+=======
+    t.string "speciality"
+>>>>>>> 545cfa282a9e60fabc0da679e4f43d9f14409ef8
     t.integer "years_experience"
     t.integer "phone_number_ext"
     t.string "email"
