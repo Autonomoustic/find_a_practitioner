@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Sunrise Clinic </title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <title> Patients </title>
+
 </head>
 <body>
   <div class="navigation">
@@ -26,12 +24,23 @@
             <th colospan="3></th>"
           </tr>
         </thead>
+        <tbody>
         <tr>
           <td><%= @patient.name %></td>
             <td><%= @patient.age %></td>
             <td><%= @patient.address %></td>
             <td><%= @patient.medical_history %></td>
         </tr>
+      </tbody>
       </table>
+</body>
+</html>
 
-<br>
+<div class="navigation"
+  <ul>
+   <li><%= link_to 'All practitioners', practitioners_path %></li>
+   <li><%= link_to 'All patients', patients_path %></li>
+    <li><%= link_to 'All Clinics', clinics_path %></li>
+    <li><%= link_to 'New Patient', new_patient_path %></li>
+  </ul>
+</div>

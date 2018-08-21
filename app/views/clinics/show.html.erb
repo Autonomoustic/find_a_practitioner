@@ -1,9 +1,42 @@
-<h1><%=@clinic.name%></h1>
-
-<h3><%=@clinic.address%></h3>
-<h3><%=@clinic.phone_number%></h3>
 
 
+
+<<<<<<< HEAD
 <% @clinic.departments.each do |department|%>
   <p><%=link_to department.name, department_path(department.id)%></p>
 <% end %>
+=======
+
+            <div class="table">
+              <table>
+                <thead>
+                  <tr>
+                    <th><strong>Name</strong> </th>
+                    <th> <strong>Address</strong></th>
+                    <th> Phone number</th>
+
+                    <th colspan="3"></th>
+                  </tr>
+                </thead>
+              <tbody>
+                <tr>
+                  <td><%= @clinic.name %></td>
+                    <td><%= @clinic.address %></td>
+                    <td><%= @clinic.phone_number %></td>
+                </tr>
+              </tbody>
+
+
+                </table>
+              </div>
+
+
+              <div class="navigation"
+                <ul>
+                 <li><%= link_to 'All practitioners', practitioners_path %></li>
+                 <li><%= link_to 'All patients', patients_path %></li>
+                  <li><%= link_to 'All Clinics', clinics_path %></li>
+                  <li><%= link_to 'New Patient', new_patient_path %></li>
+                </ul>
+              </div>
+>>>>>>> 8ddfed36a2f9327c2123e79bf3602d32fdc58659
