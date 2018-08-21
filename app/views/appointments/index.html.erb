@@ -1,1 +1,13 @@
-<h1>Your appointment</h1>
+<h1>Your appointments</h1>
+
+# this page should list all appointments you have by practioner name and clinic location
+# each should link to the appointment show page where you can see further details
+# there should be a link to create a new appointment
+# more links
+  - clinic
+  - practitoner
+  - patient
+<% @appointments.each do |appointment| %>
+  <h3>Practitioner: <%= link_to appointment.practitioner.name, practitioner_path(appointment.practitioner.id) %></h3>
+  <p>Clinic: <%= link_to appointment.practitioner.department.clinic.name, clinic_path(appointment.practitioner.department.clinic.id)%> | <%=appointment.practitioner.department.clinic.address%></p>
+<% end %>

@@ -5,14 +5,14 @@
 
 <ul>
 <% if @appointment.errors.any? %>
-  <% @appointment.errors.full_messages do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
+  <% @appointment.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
   <% end %>
 </ul>
 
 <%= f.label :patient %>
-<%= f.collection_select :patient, Patient.all, :id, :name %>
+<%= f.collection_select :patient_id, Patient.all, :id, :name %>
 
 <%= f.label :date %>
 <%= f.text_field :date %>
@@ -21,7 +21,7 @@
 <%= f.text_field :time %>
 
 <%= f.label 'Choose a practitioner' %>
-<%= f.collection_select :practitioner, Practitioner.all, :id, :name %>
+<%= f.collection_select :practitioner_id, Practitioner.all, :id, :name %>
 
 <%= f.submit %>
 

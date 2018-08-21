@@ -4,7 +4,7 @@
 
 <h3>Click on a link to choose a practioner<h3>
 
-<% @department.practitioner.each do |practitioner| %>
- <p>Name:<%= link_to practitoner.name, practitoner_path(practitoner)%></p>
- <p>speciality: <%= practitoner.speciality%></p>
+<% @department.practitioners.each do |practitioner| %>
+ <p>Name:<%= link_to practitioner.name, practitioner_path(practitioner.id)%></p>
+ <p>speciality: <%=practitioner.department.name %></p>
 <% end %>

@@ -16,6 +16,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to appointment_path(@appointment)
     else
+      flash[:errors] = @appointment.errors.full_messages
       render :new
     end
   end
@@ -30,6 +31,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
       redirect_to appointment_path(@appointment)
     else
+      flash[:errors] = @appointment.errors.full_messages
       render :edit
     end
   end
@@ -47,6 +49,6 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:patient, :date, :time, :practitioner)
+    params.require(:appointment).permit(:patient_id, :date, :time, :practitioner_id)
   end
 end

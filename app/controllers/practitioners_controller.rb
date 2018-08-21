@@ -7,6 +7,4 @@ class PractitionersController < ApplicationController
     @practitioner = Practitioner.find(params[:id])
   end
 
-
-
 end

@@ -4,6 +4,6 @@
 <h3><%=@clinic.phone_number%></h3>
 
 
-<% @clinic.department.each do |department|%>
-  <p><%=link_to department.name, department_path(department)%></p>
+<% @clinic.departments.each do |department|%>
+  <p><%=link_to department.name, department_path(department.id)%></p>
 <% end %>
