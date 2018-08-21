@@ -11,13 +11,13 @@
 
 #clinic
 clinics = [
-{name: "Clinic 1", address: "1 Pavilion Avenue", phone_number: "020 3132 2190"},
-{name: "Clinic 2", address: "14 Castle Road", phone_number: "020 3132 2000"},
-{name: "Clinic 3", address: "32 Circle Drive", phone_number: "020 2432 9190"},
-{name: "Clinic 4", address: "63 Dower Avenue", phone_number: "020 3130 2090"},
-{name: "Clinic 5", address: "45 Swing Avenue", phone_number: "020 2032 2190"},
-{name: "Clinic 6", address: "32 Pavilion Avenue", phone_number: "020 3132 2191"},
-{name: "Clinic 7", address: "10a Roti Avenue", phone_number: "020 3678 2190"}
+{name: "The City Perio", address: "5 Finsbury Circus, London EC2M 7AD", phone_number: "020 3132 2190"},
+{name: "Elm Lodge Clinic", address: "317 Oxford Rd, Reading RG30 1AT", phone_number: "020 3132 2000"},
+{name: "Harrow Health Care Centre", address: "The Clementine Churchill Hospital, Harrow HA1 3RX", phone_number: "020 2432 9190"},
+{name: "Finsbury Health Centre", address: "Clerkenwell, London EC1R 0LP", phone_number: "020 7530 4200"},
+{name: "Highgate Health Centre", address: "31A Highgate High St, Highgate, London N6 5JT", phone_number: "020 2032 2190"},
+{name: "Richmond Practice", address: "19 Sheen Rd, Richmond TW9 1AD", phone_number: "020 3132 2191"},
+{name: "Ramsay Health Care UK", address: "Level 18, Tower 42, 25 Old Broad Street, London EC2N 1HQ", phone_number: "020 3678 2190"}
 ]
 
 

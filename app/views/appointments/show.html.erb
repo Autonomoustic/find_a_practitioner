@@ -7,3 +7,8 @@
 <p>Your appointment is on <%= @appointment.date %></p>
 
 <p>Your appointment is at <%= @appointment.time %></p>
+
+
+<p><%= month_calendar do |date| %></p>
+<p>  <%= date %> </p>
+<% end %>

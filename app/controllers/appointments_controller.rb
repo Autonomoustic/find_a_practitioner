@@ -42,9 +42,9 @@ class AppointmentsController < ApplicationController
 
   private
 
-  def find
-    Appointment.find(params[:id])
-  end
+  # def find
+  #   Appointment.find(params[:id])
+  # end
 
   def appointment_params
     params.require(:appointment).permit(:date, :time, :practitioner)
