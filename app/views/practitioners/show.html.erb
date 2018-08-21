@@ -1,0 +1,28 @@
+
+
+  <table>
+    <thead>
+    <tr>
+      <th> Name </th>
+      <th> Gender</th>
+      <th> Years experience</th>
+      <th> Phone number</th>
+      <th> Email</th>
+
+      <th colospan="3></th>"
+    </tr>
+  </thead>
+    <tr>
+    <td><%= @practitioner.name %></td>
+    <td><%= @practitioner.gender %></td>
+    <td><%= @practitioner.years_experience %></td>
+    <td><%= @practitioner.phone_number_ext %></td>
+    <td><%= @practitioner.email %></td>
+
+       </tr>
+ </table>
+
+ <br>
+
+ <%= link_to 'All practitioners', practitioners_path %><br/>
+ <%= link_to 'All patients', patients_path %>

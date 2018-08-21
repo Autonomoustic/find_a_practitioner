@@ -1,4 +1,4 @@
 class Department < ApplicationRecord
-  has_many :practitoners
+  has_many :practitioners
   belongs_to :clinic
 end

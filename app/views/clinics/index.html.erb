@@ -1,0 +1,10 @@
+<h1>Here is a list of all our Clinincs</h1>
+
+<h2>Click on the link to have a look at the services available and find a practitioner</h2>
+
+
+<% @clinics.each do |clinic| %>
+  <h3>Name of clinic: <%=link_to clinic.name, clinic_path(clinic)%></h3>
+  <p>Clinic address: <%=clinic.address%></p>
+  <p>Clinic phone number: <%=clinic.phone_number%>
+<% end %>

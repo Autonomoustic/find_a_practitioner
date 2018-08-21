@@ -1,0 +1,25 @@
+<h1> This the list of all the practitioners:</h1>
+
+  <table>
+    <thead>
+    <tr>
+      <th> Name </th>
+      <th> Gender</th>
+      <th> Years experience</th>
+      <th> Phone number</th>
+      <th> Email</th>
+      <th colospan="3></th>"
+    </tr>
+  </thead>
+    <% @practitioners.each do |practitioner| %>
+    <tr>
+    <td><a href="/practitioners/<%=  practitioner.id %>"><%= practitioner.name %></a></td>
+    <td><%= practitioner.gender %></a></td>
+    <td><%= practitioner.years_experience %></td>
+    <td><%= practitioner.phone_number_ext %></td>
+    <td><%= practitioner.email %></td>
+
+       </tr>
+     <% end %>
+   </tbody>
+ </table>

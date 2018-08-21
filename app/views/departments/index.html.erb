@@ -1,0 +1,10 @@
+<h1>Here is a list of all our departments</h1>
+
+<h2>Click on the link to find a practitioner</h2>
+
+
+<% @department.each do |department| %>
+  <h3>Name of department: <%=link_to department.name, department_path(department)%></h3>
+  <p>Clinic address: <%=clinic.address%></p>
+  <p>Clinic phone number: <%=clinic.phone_number%>
+<% end %>

@@ -4,6 +4,8 @@ class DepartmentsController < ApplicationController
   end
 
   def show
-    @departments = Department.find([:id])
+
+    @department = Department.find(params[:id])
+
   end
 end

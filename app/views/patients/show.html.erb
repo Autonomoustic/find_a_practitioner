@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Sunrise Clinic </title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="navigation">
+    <ul>
+      <li><%= link_to 'All Patients', patients_path %><br/></li>
+    <li>  <%= link_to 'All Practitioners', practitioners_path %></li>
+    </ul>
+  </div>
+<div>
+      <table>
+        <thead>
+        <tr>
+            <th><strong>Name</strong> </th>
+            <th> <strong>Age</strong></th>
+            <th> <strong>Address</strong></th>
+            <th><strong> Medical history</strong></th>
+
+            <th colospan="3></th>"
+          </tr>
+        </thead>
+        <tr>
+          <td><%= @patient.name %></td>
+            <td><%= @patient.age %></td>
+            <td><%= @patient.address %></td>
+            <td><%= @patient.medical_history %></td>
+        </tr>
+      </table>
+
+<br>
