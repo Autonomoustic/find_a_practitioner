@@ -40,7 +40,7 @@ departments.each {|department_data| Department.create(department_data)}
 #practitioners
 
 Practitioner.create(name: "Dona Paulsen", gender: "female", years_experience: 15, phone_number_ext: 30, email: "dona.p@clinic.com", department: Department.all.sample)
-Practitioner.create(name: "Flavius Linus", gender: "male", years_experience: 5, phone_number_ext: 31, email: "flavius.l@clinic.com",department: Department.all.sample)
+Practitioner.create(name: "Flavius Linus", gender: "male", years_experience: 5, phone_number_ext: 31, email: "flavius.l@clinic.com", department: Department.all.sample)
 Practitioner.create(name: "Sonam Pliu-Li", gender: "male", years_experience: 20, phone_number_ext: 32, email: "sonam.p@clinic.com", department: Department.all.sample)
 Practitioner.create(name: "Logan S. Scott", gender: "male", years_experience: 25, phone_number_ext: 33, email: "logan.s@clinic.com", department: Department.all.sample)
 Practitioner.create(name: "Gilian Sonders", gender: "female", years_experience: 26, phone_number_ext: 152, email: "gil.s@clinic.com", department: Department.all.sample)

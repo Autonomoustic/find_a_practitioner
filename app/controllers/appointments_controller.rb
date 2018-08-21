@@ -47,6 +47,6 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:date, :time, :practitioner)
+    params.require(:appointment).permit(:patient, :date, :time, :practitioner)
   end
 end
