@@ -6,7 +6,6 @@ class AppointmentsController < ApplicationController
   def show
     @appointment = find
   end
-
   def new
     @appointment = Appointment.new
     @practitioner = Practitioner.find(params[:practitioner_id])

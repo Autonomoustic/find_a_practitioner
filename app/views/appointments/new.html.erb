@@ -1,5 +1,8 @@
 <h1>Book an appointment</h1>
 
+<div class="form">
+<%= form_for(@appointment) do |f| %>
+
 <ul>
 <% if flash[:errors] %>
  <% flash[:errors].each do |msg| %>
@@ -21,6 +24,14 @@
 
 <%= f.submit %>
 
+<% end %>
+</div>
+
+<div class="Calendar">
+<h2> Calendar:</h2>
+
+<p><%= month_calendar do |date| %></p>
+<p>  <%= date %> </p>
 <% end %>
 
 

@@ -1,4 +1,4 @@
-<h1>Clinic Details:</h1>
+<h2> <%= @clinic.name %> Details</h2>
             <div class="table">
               <table>
                 <thead>
@@ -31,11 +31,29 @@
 ------------------------------------------------------
 
 
-              <div class="navigation"
-              <ul>
-                <li><%= link_to 'Book an appointment', practitioners_path %></li>
-                <li><%= link_to 'All patients', patients_path %></li>
-                <li><%= link_to 'All Clinics', clinics_path %></li>
-                <li><%= link_to 'New Patient', new_patient_path %></li>
-              </ul>
-              </div>
+
+    <div>
+      <p> <%= @clinic.name %> has the following departments:</p>
+       <ul>
+         <% @clinic.departments.each do |department|%>
+
+          <li><%=link_to department.name, department_path(department.id)%></li>
+            <% end %>
+          </ul>
+
+
+    </div>
+
+    <div id="footer">
+
+    <p> <%= link_to 'Clinics', clinics_path %> | <%= link_to 'Practitioners', practitioners_path %> | <%= link_to 'Patients', patients_path %> </p>
+
+    </div>
+    <div class="navigation"
+    <ul>
+      <li><%= link_to 'Book an appointment', practitioners_path %></li>
+      <li><%= link_to 'All patients', patients_path %></li>
+      <li><%= link_to 'All Clinics', clinics_path %></li>
+      <li><%= link_to 'New Patient', new_patient_path %></li>
+    </ul>
+    </div>

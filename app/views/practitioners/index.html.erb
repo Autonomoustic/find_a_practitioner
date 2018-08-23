@@ -1,28 +1,37 @@
-<h1> This the list of all the practitioners:</h1>
+<html>
+  <header>
+    <title> Practitioners</title>
+  </header>
+  <body>
+     <h1> List of Practitioners:</h1>
 
-  <table>
-    <thead>
-    <tr>
-      <th> Name </th>
-      <th> Gender</th>
-      <th> Years experience</th>
-      <th> Phone number</th>
-      <th> Email</th>
-      <th colospan="3></th>"
-    </tr>
-  </thead>
-    <% @practitioners.each do |practitioner| %>
-    <tr>
-    <td><a href="/practitioners/<%=  practitioner.id %>"><%= practitioner.name %></a></td>
-    <td><%= practitioner.gender %></a></td>
-    <td><%= practitioner.years_experience %></td>
-    <td><%= practitioner.phone_number_ext %></td>
-    <td><%= practitioner.email %></td>
+          <table>
+            <thead>
+              <tr>
+                <th> Practitioner Name </th>
+                <th> Gender</th>
+                <th> Years experience</th>
+                <th> Phone number Extension</th>
+                <th> Email</th>
+                <th> Clinic </th>
+            <th colospan="3></th>"
+              </tr>
+          </thead>
+              <tbody>
+                <% @practitioners.each do |practitioner| %>
+                <tr>
 
-       </tr>
-     <% end %>
-   </tbody>
- </table>
+                  <td><strong><%= link_to practitioner.name,  practitioner_path(practitioner.id) %></strong></td>
+                  <td><%= (practitioner.gender).capitalize %></a></td>
+                  <td><%= practitioner.years_experience %> years</td>
+                  <td>(<%= practitioner.phone_number_ext %>)</td>
+                  <td><i><%= practitioner.email %></i></td>
+                  <td><%= link_to practitioner.department.clinic.name,  clinic_path(practitioner.department.clinic.id) %></td>
+                </tr>
+                    <% end %>
+               </tbody>
+         </table>
+  </body>
 
  <div class="navigation"
  <ul>

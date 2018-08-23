@@ -1,26 +1,35 @@
 <h1>Practitioner Details</h1>
 
-  <table>
-    <thead>
-    <tr>
-      <th> Name </th>
-      <th> Gender</th>
-      <th> Years experience</th>
-      <th> Phone number</th>
-      <th> Email</th>
+<html>
+  <header>
+  </header>
+  <body>
+      <table>
+        <thead>
+          <tr>
+            <th> Name </th>
+            <th> Gender</th>
+            <th> Years experience</th>
+            <th> Phone number Extension</th>
+            <th> Email</th>
 
-      <th colospan="3></th>"
-    </tr>
-  </thead>
-    <tr>
-    <td><%= @practitioner.name %></td>
-    <td><%= @practitioner.gender %></td>
-    <td><%= @practitioner.years_experience %></td>
-    <td><%= @practitioner.phone_number_ext %></td>
-    <td><%= @practitioner.email %></td>
+           <th colospan="3></th>"
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @practitioner.name %></td>
+            <td><%= @practitioner.gender %></td>
+            <td><%= @practitioner.years_experience %></td>
+            <td><%= @practitioner.phone_number_ext %></td>
+            <td><%= @practitioner.email %></td>
+          </tr>
+        </tbody>
 
-       </tr>
- </table>
+      </table>
+  </body>
+  <footer>
+      <div id="footer">
 
  <br>
 

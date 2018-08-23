@@ -12,8 +12,13 @@ before_action :set_patient, only: [:show, :edit, :update, :destroy]
     end
 
     def create
-      @patient = Patient.new(patient_params)
+      @patient = Patient.create(patient_params)
       if @patient.valid?
+
+        @user = User.create(user_params)
+        @user.profile = @patient
+        @patient = user.profile
+
         @patient.save
         redirect_to @patient
       else
@@ -23,6 +28,9 @@ before_action :set_patient, only: [:show, :edit, :update, :destroy]
     end
 
     def edit
+      authorized_for(params[:id])
+    @patient = Patient.find(params[:id])
+
     end
 
     def update
@@ -41,11 +49,23 @@ before_action :set_patient, only: [:show, :edit, :update, :destroy]
     end
 
     private
+    def set_patient
+      @patient = Patient.find(params[:id])
+    end
+    
+    def set_practitioner
+      @practitioner = Practitioner.find(params[:id])
+    end
 
     def patient_params
       params.require(:patient).permit(:name, :age, :address, :medical_history, :clinic_id)
     end
-    def set_patient
-      @patient = Patient.find(params[:id])
+
+    def practitioner_params
+      params.require(:practitioner).permit(:name, :gender, :years_experience, :phone_number_ext, :email, :department_id)
+    end
+
+    def user_params
+      params.require(:user).permit(:name, :password, :profile_type)
     end
 end
