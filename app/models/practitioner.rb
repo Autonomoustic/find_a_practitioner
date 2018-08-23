@@ -18,4 +18,12 @@ class Practitioner < ApplicationRecord
     self.availabilities.map {|availability| availability.date}.uniq
   end
 
+  def number_of_patients
+    self.patients.count
+  end
+
+  def number_of_appointments
+    self.appointments.count
+  end
+
 end

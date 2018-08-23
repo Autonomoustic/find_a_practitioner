@@ -14,6 +14,9 @@
                 <th> Phone number Extension</th>
                 <th> Email</th>
                 <th> Clinic </th>
+                <th> Number of Patients </th>
+                <th> Number of Appointments </th>
+                <th> Days_Available </th>
             <th colospan="3></th>"
               </tr>
           </thead>
@@ -27,6 +30,12 @@
                   <td>(<%= practitioner.phone_number_ext %>)</td>
                   <td><i><%= practitioner.email %></i></td>
                   <td><%= link_to practitioner.department.clinic.name,  clinic_path(practitioner.department.clinic.id) %></td>
+                  <td><%= practitioner.number_of_patients %></td>
+                  <td><%= practitioner.number_of_appointments %> </td>
+                  <td><%  practitioner.unique_availability_dates.map do |date| %>
+                  <%= link_to date.strftime("%A, %b %d"),  new_appointment_path + "?practitioner_id=#{practitioner.id}&date=#{date}"%>
+                  <% end %>
+                  </td>
                 </tr>
                     <% end %>
                </tbody>
