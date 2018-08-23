@@ -6,4 +6,11 @@ class Patient < ApplicationRecord
   validates :age, presence: true, numericality: {greater_than_or_equal_to: 18}
   validates :address, presence: true
   validates :medical_history, length: {maximum: 300}
+
+  def count_appointments
+    self.appointments.count
+  end
+  def count_practitioners
+    self.practitioners.count
+  end
 end

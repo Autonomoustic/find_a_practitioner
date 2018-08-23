@@ -4,6 +4,11 @@
   </header>
   <body>
      <h1> List of Practitioners:</h1>
+     <div class="navigation"
+     <ul>
+       <li><%= link_to 'Add a new Practitioner', new_practitioner_path %></li>
+     </ul>
+    </div>
 
           <table>
             <thead>
@@ -32,12 +37,3 @@
                </tbody>
          </table>
   </body>
-
- <div class="navigation"
- <ul>
-   <li><%= link_to 'Book an appointment', practitioners_path %></li>
-   <li><%= link_to 'All patients', patients_path %></li>
-   <li><%= link_to 'All Clinics', clinics_path %></li>
-   <li><%= link_to 'New Patient', new_patient_path %></li>
- </ul>
-</div>
