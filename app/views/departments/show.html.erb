@@ -1,17 +1,9 @@
 
-<h2><%=@department.name %></h2>
+<h3<%=@department.name %></h3>
 
-<h3>Click on a link to choose a practioner<h3>
+<p>Click on a link to choose a practioner</p>
 
 <% @department.practitioners.each do |practitioner| %>
  <p>Name:<%= link_to practitioner.name, practitioner_path(practitioner.id)%></p>
  <p>speciality: <%=practitioner.department.name %></p><br>
 <% end %>
-
-
-<ul>
-  <li><%= link_to 'Book an appointment', practitioners_path %></li>
-  <li><%= link_to 'All patients', patients_path %></li>
-  <li><%= link_to 'All Clinics', clinics_path %></li>
-  <li><%= link_to 'New Patient', new_patient_path %></li>
-</ul>
