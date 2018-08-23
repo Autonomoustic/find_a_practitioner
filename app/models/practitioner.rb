@@ -17,9 +17,5 @@ class Practitioner < ApplicationRecord
   def unique_availability_dates
     self.availabilities.map {|availability| availability.date}.uniq
   end
-<<<<<<< HEAD
 
-
-=======
->>>>>>> bf5571c67b4a5f598078d72e2f07387200bf859e
 end
