@@ -1,3 +1,5 @@
+<h1>Patient Details:</h1>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +8,7 @@
 </head>
 <body>
 
+<div>
       <table>
         <thead>
         <tr>
@@ -29,8 +32,20 @@
 </body>
 </html>
 
-<div id="footer">
+<h2>Your Appointments</h2>
 
-     <p> <%= link_to 'Practitioners', practitioners_path %> | <%= link_to 'Clinics', clinics_path %> |  <%= link_to 'Patients', patients_path %> </p>
+<ul>
+  <% @patient.appointments.each do |appointment|%>
+  <li>You are seeing link_to <%= appointment.availability.practitioner.name %> on <%= appointment.availability.date %> at <%= appointment.availability.time%></li><br>
+  <li><%= link_to 'Delete Appointment', appointment%></li>
+  <% end %>
+</ul>
 
- </div>
+
+<br>
+  <ul>
+    <li><%= link_to 'Book an appointment', practitioners_path %></li>
+    <li><%= link_to 'All patients', patients_path %></li>
+    <li><%= link_to 'All Clinics', clinics_path %></li>
+    <li><%= link_to 'New Patient', new_patient_path %></li>
+  </ul>

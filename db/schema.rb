@@ -13,14 +13,22 @@
 ActiveRecord::Schema.define(version: 2018_08_21_182401) do
 
   create_table "appointments", force: :cascade do |t|
-    t.integer "date"
-    t.integer "time"
+    t.integer "availability_id"
     t.integer "practitioner_id"
     t.integer "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
     t.index ["practitioner_id"], name: "index_appointments_on_practitioner_id"
+  end
+
+  create_table "availabilities", force: :cascade do |t|
+    t.date "date"
+    t.string "time"
+    t.integer "practitioner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["practitioner_id"], name: "index_availabilities_on_practitioner_id"
   end
 
   create_table "clinics", force: :cascade do |t|

@@ -1,4 +1,4 @@
-
+<h1>Practitioner Details</h1>
 
 <html>
   <header>
@@ -31,8 +31,23 @@
   <footer>
       <div id="footer">
 
-           <p> <%= link_to 'Practitioners', practitioners_path %> | <%= link_to 'Clinics', clinics_path %> |  <%= link_to 'Patients', patients_path %> </p>
+ <br>
 
-       </div>
-  </footer>
- </html>
+ <h2>Available Dates</h2>
+ <h3>Click on a date to book an appointment with <%=@practitioner.name%></h3>
+<br>
+<ul>
+
+  <% @practitioner.unique_availability_dates.map do |date| %>
+  <li><%= link_to date.strftime("%A, %b %d"),  new_appointment_path + "?practitioner_id=#{@practitioner.id}&date=#{date}"%></li>
+  <% end %>
+</ul>
+
+ <div class="navigation"
+ <ul>
+   <li><%= link_to 'Book an appointment', practitioners_path %></li>
+   <li><%= link_to 'All patients', patients_path %></li>
+   <li><%= link_to 'All Clinics', clinics_path %></li>
+   <li><%= link_to 'New Patient', new_patient_path %></li>
+ </ul>
+</div>

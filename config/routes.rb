@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :users
   resources :patients
   resources :appointments
-  resources :practitioners, only: [:index, :show, :new, :create]
+  resources :practitioners, only: [:index, :show, :new, :create] do
+    get "appointments/new", to: 'appointments#new'
+  end
   resources :departments, only: [:index, :show]
   resources :clinics, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

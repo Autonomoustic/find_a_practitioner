@@ -22,6 +22,14 @@
                 </table>
               </div>
 
+<h2>Departments</h2>
+
+<% @clinic.departments.each do |department|%>
+  <h3><%=link_to department.name, department_path(department.id)%></h3>
+<% end %>
+
+------------------------------------------------------
+
 
 
     <div>
@@ -40,4 +48,12 @@
 
     <p> <%= link_to 'Clinics', clinics_path %> | <%= link_to 'Practitioners', practitioners_path %> | <%= link_to 'Patients', patients_path %> </p>
 
+    </div>
+    <div class="navigation"
+    <ul>
+      <li><%= link_to 'Book an appointment', practitioners_path %></li>
+      <li><%= link_to 'All patients', patients_path %></li>
+      <li><%= link_to 'All Clinics', clinics_path %></li>
+      <li><%= link_to 'New Patient', new_patient_path %></li>
+    </ul>
     </div>
