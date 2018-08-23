@@ -1,0 +1,21 @@
+<h1>Log in</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <p> <%= e %> </p>
+  <% end %>
+<% end %>
+
+<%= form_for @session_path do |f|%>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+
+  <% profile_type = ["patient", "practitioner"] %>
+  <% profile_type.each do |profile| %>
+  <%= f.check_box :profiles, {multiple: false}, profile, true%>
+  <% end %>
+  <%= submit_tag %>
+<% end %>

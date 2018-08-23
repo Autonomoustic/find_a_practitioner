@@ -5,14 +5,7 @@
 
 </head>
 <body>
-  <div class="navigation">
-    <ul>
-      <li><%= link_to 'All Patients', patients_path %><br/></li>
-    <li>  <%= link_to 'All Practitioners', practitioners_path %></li>
-    <li><%= link_to 'Book An Appointment', new_appointment_path %></li>
-    </ul>
-  </div>
-<div>
+
       <table>
         <thead>
         <tr>
@@ -36,11 +29,8 @@
 </body>
 </html>
 
-<div class="navigation"
-  <ul>
-   <li><%= link_to 'All practitioners', practitioners_path %></li>
-   <li><%= link_to 'All patients', patients_path %></li>
-    <li><%= link_to 'All Clinics', clinics_path %></li>
-    <li><%= link_to 'New Patient', new_patient_path %></li>
-  </ul>
-</div>
+<div id="footer">
+
+     <p> <%= link_to 'Practitioners', practitioners_path %> | <%= link_to 'Clinics', clinics_path %> |  <%= link_to 'Patients', patients_path %> </p>
+
+ </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_132054) do
+ActiveRecord::Schema.define(version: 2018_08_21_182401) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "date"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_132054) do
     t.string "name"
     t.string "address"
     t.string "phone_number"
+    t.string "salt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,10 +52,6 @@ ActiveRecord::Schema.define(version: 2018_08_20_132054) do
   create_table "practitioners", force: :cascade do |t|
     t.string "name"
     t.string "gender"
-<<<<<<< HEAD
-=======
-    t.string "speciality"
->>>>>>> 545cfa282a9e60fabc0da679e4f43d9f14409ef8
     t.integer "years_experience"
     t.integer "phone_number_ext"
     t.string "email"
@@ -62,6 +59,13 @@ ActiveRecord::Schema.define(version: 2018_08_20_132054) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["department_id"], name: "index_practitioners_on_department_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end

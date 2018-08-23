@@ -1,10 +1,40 @@
-<h1>Here is a list of all our departments</h1>
 
-<h2>Click on the link to find a practitioner</h2>
+<p> This is a list of all departments available through our clinics</p>
+<table>
+    <thead>
+      <tr>
+        <th><strong>Department Name</strong> </th>
+        <!--clinic details  -->
+        <th> Clinic Name</th>
+        <th> Address</th>
+        <th> Phone Number</th>
+        <!--practitioner details  -->
+        <th> Practitioners</th>
 
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-<% @department.each do |department| %>
-  <h3>Name of department: <%=link_to department.name, department_path(department)%></h3>
-  <p>Clinic address: <%=clinic.address%></p>
-  <p>Clinic phone number: <%=clinic.phone_number%>
-<% end %>
+    <tbody>
+      <%@departments.each do |department| %>
+          <tr>
+
+                <td> department.name</td>
+                  <!--clinic details  -->
+                    <td><%= department.clinic.name %></td>
+                <td><%= department.clinic.address %></td>
+                <td><%= department.clinic.phone_number %></td>
+
+                  <!--practitioner details  -->
+
+                  <td>
+                    <ul>
+                        <% department.practitioners.each do |practitioner|%>
+                        <li> <a href="/practitioners/ <%= practitioner.id %>"><%= practitioner.name %></a>
+                        <% end %>
+                  </ul>
+                  </td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>

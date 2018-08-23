@@ -1,15 +1,18 @@
-<%= form_for(@patient) do |f| %>
-  <% if @patient.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@patient.errors.count, "error") %> This patient's details cannot be saved></h2>
 
+
+
+<%= form_for @patient do |f| %>
+    <div>
       <ul>
-      <% @patient.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+      <% if @patient.errors.any? %>
+        <% @patient.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        <% end %>
       </ul>
+
     </div>
-  <% end %>
+
 
   <div class="field">
     <%= f.label :name %><br>

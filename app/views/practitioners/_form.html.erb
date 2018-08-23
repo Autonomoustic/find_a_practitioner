@@ -1,0 +1,41 @@
+
+
+<%= form_for @practitioner do |f| %>
+<div>
+  <ul>
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+</div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :years_experience %><br>
+    <%= f.text_field :years_experience %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number_ext %><br>
+    <%= f.text_field :phone_number_ext %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.collection_select :department_id, Department.all, :id, :name  %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
