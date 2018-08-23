@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_155406) do
   create_table "availabilities", force: :cascade do |t|
     t.date "date"
     t.string "time"
+    t.boolean "booked"
     t.integer "practitioner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

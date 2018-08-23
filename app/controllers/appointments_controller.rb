@@ -11,7 +11,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new
     @practitioner = Practitioner.find(params[:practitioner_id])
     @availabilities = @practitioner.availabilities.select do |availability|
-      availability.date.strftime("%Y-%m-%d") == params[:date]
+      availability.booked != true && availability.date.strftime("%Y-%m-%d") == params[:date]
     end
 
   end
@@ -19,6 +19,9 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
+      @appointment.availability.booked = true
+      @appointment.availability.save
+      @appointment.save
       redirect_to appointment_path(@appointment)
     else
       flash[:errors] = @appointment.errors.full_messages

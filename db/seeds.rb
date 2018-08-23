@@ -64,16 +64,16 @@ availabilities = []
 
 Practitioner.all.each do |p|
   (0..6).to_a.each do |x|
-    availabilities.push({date: today + x, time: "09:00", practitioner: p})
-    availabilities.push({date: today + x, time: "10:00", practitioner: p})
-    availabilities.push({date: today + x, time: "11:00", practitioner: p})
-    availabilities.push({date: today + x, time: "13:00", practitioner: p})
-    availabilities.push({date: today + x, time: "14:00", practitioner: p})
-    availabilities.push({date: today + x, time: "15:00", practitioner: p})
-    availabilities.push({date: today + x, time: "16:00", practitioner: p})
-    availabilities.push({date: today + x, time: "17:00", practitioner: p})
-    availabilities.push({date: today + x, time: "18:00", practitioner: p})
-    availabilities.push({date: today + x, time: "19:00", practitioner: p})
+    availabilities.push({date: today + x, time: "09:00", practitioner: p, booked: false})
+    availabilities.push({date: today + x, time: "10:00", practitioner: p, booked: false})
+    availabilities.push({date: today + x, time: "11:00", practitioner: p, booked: false})
+    availabilities.push({date: today + x, time: "13:00", practitioner: p, booked: false})
+    availabilities.push({date: today + x, time: "14:00", practitioner: p, booked: false})
+    availabilities.push({date: today + x, time: "15:00", practitioner: p, booked: false})
+    availabilities.push({date: today + x, time: "16:00", practitioner: p, booked: false})
+    availabilities.push({date: today + x, time: "17:00", practitioner: p, booked: false})
+    availabilities.push({date: today + x, time: "18:00", practitioner: p, booked: false})
+    availabilities.push({date: today + x, time: "19:00", practitioner: p, booked: false})
   end
 end
 

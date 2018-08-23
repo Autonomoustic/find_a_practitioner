@@ -9,4 +9,5 @@ class Practitioner < ApplicationRecord
     self.availabilities.map {|availability| availability.date}.uniq
   end
 
+
 end
