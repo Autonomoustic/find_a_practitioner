@@ -1,7 +1,8 @@
-<h1>Here is a list of all our Clinincs</h1>
+<h1>Here is a list of all our Clinics</h1>
 
-<h2>Click on the link to have a look at the services available and find a practitioner</h2>
+<h2>Click on a link to have a look at the services available and find a practitioner</h2>
 
+<h3>You can also search by <%= link_to 'Department', departments_path%></h3><br>
     <table>
         <thead>
           <tr>
@@ -26,10 +27,10 @@
 
 
       <div class="navigation"
-        <ul>
-         <li><%= link_to 'All practitioners', practitioners_path %></li>
-         <li><%= link_to 'All patients', patients_path %></li>
-          <li><%= link_to 'All Clinics', clinics_path %></li>
-          <li><%= link_to 'New Patient', new_patient_path %></li>
-        </ul>
+      <ul>
+        <li><%= link_to 'Book an appointment', practitioners_path %></li>
+        <li><%= link_to 'All patients', patients_path %></li>
+        <li><%= link_to 'All Clinics', clinics_path %></li>
+        <li><%= link_to 'New Patient', new_patient_path %></li>
+      </ul>
       </div>

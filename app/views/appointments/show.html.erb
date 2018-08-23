@@ -1,14 +1,20 @@
+<h1>Your Appointment</h1>
+
+<h2>Department: <%=link_to @appointment.practitioner.department.name, clinic_path(@appointment.practitioner.department.clinic.id)%></h2>
+
+<h3>Your are seeing: <%= link_to @appointment.practitioner.name, practitioner_path(@appointment.practitioner.id) %></h3>
+
+<p>Your appointment is on: <%= @appointment.availability.date %></p>
+
+<p>Your appointment is at: <%= @appointment.availability.time %></p>
+
+<%= button_to "delete", @appointment, :method => :delete %>
 
 
-<h1><%=@appointment.practitioner.department.name%></h1>
-
-<h2>Your are seeing <%= @appointment.practitioner.name %></h2>
-
-<p>Your appointment is on <%= @appointment.date %></p>
-
-<p>Your appointment is at <%= @appointment.time %></p>
-
-
-<p><%= month_calendar do |date| %></p>
-<p>  <%= date %> </p>
-<% end %>
+<div class="navigation"
+  <ul>
+    <li><%= link_to 'Book an appointment', practitioners_path %></li>
+   <li><%= link_to 'All patients', patients_path %></li>
+    <li><%= link_to 'All Clinics', clinics_path %></li>
+  </ul>
+</div>

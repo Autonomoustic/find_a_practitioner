@@ -56,3 +56,25 @@ Practitioner.create(name: "Richard Dew", gender: "male", years_experience: 8, ph
 Practitioner.create(name: "Dorin Tayler", gender: "male", years_experience: 9, phone_number_ext: 71, email: "dorin.t@clinic.com", department: Department.all.sample)
 Practitioner.create(name: "Olivia Brown", gender: "female", years_experience: 15, phone_number_ext: 80, email: "olivia.b@clinic.com", department: Department.all.sample)
 Practitioner.create(name: "Sonia Evans", gender: "female", years_experience: 21, phone_number_ext: 301, email: "sonia.e@clinic.com", department: Department.all.sample)
+
+
+#availability
+today = Date.today
+availabilities = []
+
+Practitioner.all.each do |p|
+  (0..6).to_a.each do |x|
+    availabilities.push({date: today + x, time: "09:00", practitioner: p})
+    availabilities.push({date: today + x, time: "10:00", practitioner: p})
+    availabilities.push({date: today + x, time: "11:00", practitioner: p})
+    availabilities.push({date: today + x, time: "13:00", practitioner: p})
+    availabilities.push({date: today + x, time: "14:00", practitioner: p})
+    availabilities.push({date: today + x, time: "15:00", practitioner: p})
+    availabilities.push({date: today + x, time: "16:00", practitioner: p})
+    availabilities.push({date: today + x, time: "17:00", practitioner: p})
+    availabilities.push({date: today + x, time: "18:00", practitioner: p})
+    availabilities.push({date: today + x, time: "19:00", practitioner: p})
+  end
+end
+
+availabilities.each {|availability_data| Availability.create(availability_data)}

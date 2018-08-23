@@ -1,17 +1,35 @@
 <h1>Here you can edit your appointment</h1>
 
+<ul>
+<% if flash[:errors] %>
+ <% flash[:errors].each do |msg| %>
+   <li><%= msg %></li>
+   <% end %>
+ <% end %>
+</ul>
 
-<%= form_for(@appointment) do |f| %>
+<%= form_for @appointment do |f|%>
 
-<%= f.label :date %>
-<%= f.text_field :date %>
+<%= f.label :practitioner_id %>
+<%= f.collection_select :practitioner_id, Practitioner.all, :id, :name%>
+<%= f.hidden_field :date, value: params[:date] %>
 
-<%= f.label :time %>
-<%= f.text_field :time %>
+<%= f.label 'Patient' %>
+<%= f.collection_select :patient_id, Patient.all, :id, :name %>
 
-<%= f.label 'Choose a practitioner' %>
-<%= f.collection_select :practitioner, Practitioner.all, :id, :name %>
+<%= f.label 'Time' %>
+<%= f.collection_select :availability_id, @availabilities, :id, :time %>
 
 <%= f.submit %>
 
 <% end %>
+
+
+<div class="navigation"
+  <ul>
+   <li><%= link_to 'All practitioners', practitioners_path %></li>
+   <li><%= link_to 'All patients', patients_path %></li>
+    <li><%= link_to 'All Clinics', clinics_path %></li>
+    <li><%= link_to 'New Patient', new_patient_path %></li>
+  </ul>
+</div>

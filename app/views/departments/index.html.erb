@@ -3,8 +3,17 @@
 <h2>Click on the link to find a practitioner</h2>
 
 
-<% @department.each do |department| %>
+<% @departments.each do |department| %>
   <h3>Name of department: <%=link_to department.name, department_path(department)%></h3>
-  <p>Clinic address: <%=clinic.address%></p>
-  <p>Clinic phone number: <%=clinic.phone_number%>
+  <p>Clinic address: <%=department.clinic.address%></p>
+  <p>Clinic phone number: <%=department.clinic.phone_number%></p><br>
+  ----------------------------------------------------------------
 <% end %>
+
+
+<ul>
+  <li><%= link_to 'Book an appointment', practitioners_path %></li>
+  <li><%= link_to 'All patients', patients_path %></li>
+  <li><%= link_to 'All Clinics', clinics_path %></li>
+  <li><%= link_to 'New Patient', new_patient_path %></li>
+</ul>
