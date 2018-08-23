@@ -9,12 +9,3 @@
 <p>Your appointment is at: <%= @appointment.availability.time %></p>
 
 <%= button_to "delete", @appointment, :method => :delete %>
-
-
-<div class="navigation"
-  <ul>
-    <li><%= link_to 'Book an appointment', practitioners_path %></li>
-   <li><%= link_to 'All patients', patients_path %></li>
-    <li><%= link_to 'All Clinics', clinics_path %></li>
-  </ul>
-</div>

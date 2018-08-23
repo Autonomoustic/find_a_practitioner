@@ -11,5 +11,9 @@
 
   <body>
     <%= yield %>
+    <div id="footer">
+
+    <p> <%= link_to 'Clinics', clinics_path %> | <%= link_to 'Practitioners', practitioners_path %> | <%= link_to 'Patients', patients_path %> </p>
+
   </body>
 </html>
